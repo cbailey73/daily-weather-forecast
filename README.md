@@ -26,5 +26,5 @@ The asynchronous fetch functions used in this projected were created by followin
 
 The code used to catch fetching errors and create a weather forecast using a for loop was written using information contained in this tutorial: https://github.com/pekkiriscim/weather/blob/main/src/js/weatherForecastData.js
 
-## Webpage:
+## Webpage
 The webpage can be found here: 
