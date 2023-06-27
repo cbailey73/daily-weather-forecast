@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+}
+
+h1, h3, h6 {
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 10px;
+}
+
+header {
+    padding: 5px;
+    margin-top: 0%;
+    width: 100%;
+    height: 15vh;
+    background-image: linear-gradient(to right, rgba(2,0,36,1), rgba(11,11,150,1), rgba(0,212,255,1));
+}
+
+main {
+    width: 100%;
+    margin: 3%;
+}
+
+#search-bar {
+  max-width: 20%;
+  margin-left: 5%;
+  z-index: 1;
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-height: fit-content;
+  overflow-x: scroll;
+}
+
+.btn-info {
+    width: 90%;
+}
+
+#weather-display {
+    min-height: fit-content;
+    padding: 0px 10px;
+}
+
+#city-input {
+    overflow-x: scroll;
+    width: 95%;
+}
+
+#search-form {
+    align-self: flex-start;
+    text-align: center;
+    max-height: fit-content;
+}
+
+#search-history {
+    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    order: 1;
+    max-height: 70%;
+    margin-top: -50%;
+}
+
+#forecast {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#current-weather-card {
+    background-color: white;
+    color: darkblue;
+    border: 3px solid black;
+    width: 100%;
+}
+
+.search-history-item {
+    align-self: flex-start;
+    background-color: darkgray;
+    border: 1px 1px 1px black;
+    border-radius: 3%;
+}
+
+.search-history-item:hover {
+    cursor: grab;
+}
+
+#upcoming-weather {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.weather-card {
+    width: 200px;
+    margin: 0px 3px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+@media screen and (max-height: 600px) {
+    .weather-card {
+        width: 100px;
+    }
+    .weather-icon {
+        width: 25px;
+        height: 25px;
+        margin: 5px auto;
+    }
+
+    .btn-info {
+        font-size: 50%;
+    }
+
+  }
