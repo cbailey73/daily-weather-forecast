@@ -1,24 +1,16 @@
 var apiKey = '742697716706061f84673c0f0e4df73c';
 
 async function fetchWeatherData(city) {
-    try {
-        var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
-        var data = await response.json();
-        return data;
-    } catch (error) {
-        return null;
-    }
-}
+    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+    var data = await response.json();
+    return data;
+};
 
 async function fetchWeatherForecastData(city) {
-    try {
-        var response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`);
-        var data = await response.json();
-        return data;
-    } catch (error) {
-        return null;
-    }
-}
+    var response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`);
+    var data = await response.json();
+    return data;
+};
 
 function displayCurrentWeather(data) {
     if (data) {
@@ -43,15 +35,13 @@ function displayWeatherForecast(data) {
         var forecastContainer = document.getElementById('forecast');
         forecastContainer.innerHTML = '';
 
-        // i < data.list.length
-
         for (let i = 0; i < data.list.length; i+=8) {
             var forecast = data.list[i+4];
             var weather = forecast.weather[0];
             var date = new Date(forecast.dt * 1000).toLocaleDateString();
             var temperature = Math.round((forecast.main.temp - 273.15) * 9/5 + 32);
             var humidity = forecast.main.humidity;
-            var windSpeed = Math.round(forecast.wind.speed * 2.23694); // Conversion from m/s to mph
+            var windSpeed = Math.round(forecast.wind.speed * 2.23694);
 
             var forecastWeatherCard = createWeatherCard('', date, weather.icon, weather.description, temperature, humidity, windSpeed);
             forecastContainer.appendChild(forecastWeatherCard);
@@ -110,6 +100,8 @@ function getWeather(event, city = null) {
     }
 
     var cityInput = document.getElementById('city-input');
+
+    // Check if the city has been previously searched, and run fetch accordingly
     var cityName = city ? city.trim() : cityInput.value.trim();
 
     if (cityName) {
