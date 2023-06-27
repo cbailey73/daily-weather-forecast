@@ -28,9 +28,9 @@ function displayCurrentWeather(data) {
         var currentWeather = data.weather[0];
         var cityName = data.name;
         var date = new Date(data.dt * 1000).toLocaleDateString();
-        var temperature = Math.round((data.main.temp - 273.15) * 9/5 + 32);
+        var temperature = Math.round((data.main.temp - 273.15) * 9/5 + 32); // Convert Celcius to Fahrenheit
         var humidity = data.main.humidity;
-        var windSpeed = Math.round(data.wind.speed * 2.23694); // Conversion from m/s to mph
+        var windSpeed = Math.round(data.wind.speed * 2.23694); // Convert m/s to mph
 
         var currentWeatherCard = createWeatherCard(cityName, date, currentWeather.icon, currentWeather.description, temperature, humidity, windSpeed);
         currentWeatherContainer.appendChild(currentWeatherCard);

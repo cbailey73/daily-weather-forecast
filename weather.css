@@ -39,7 +39,6 @@ main {
   justify-content: center;
   align-items: center;
   max-height: fit-content;
-  overflow-x: scroll;
 }
 
 .btn-info {
