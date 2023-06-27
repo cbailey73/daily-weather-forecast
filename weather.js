@@ -2,14 +2,26 @@ var apiKey = '742697716706061f84673c0f0e4df73c';
 
 async function fetchWeatherData(city) {
     var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
-    var data = await response.json();
-    return data;
+    
+    if (response.status === 404) {
+        alert('The name of this city is not found within the openweathermap.org database.');
+        throw new Error('The name of this city cannot be found.');
+    } else {
+        var data = await response.json();
+        return data;
+    };
 };
 
 async function fetchWeatherForecastData(city) {
     var response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`);
-    var data = await response.json();
-    return data;
+
+    if (response.status === 404) {
+        alert('The name of this city is not found within the openweathermap.org database.');
+        throw new Error('The name of this city cannot be found.')
+    } else {
+        var data = await response.json();
+        return data;
+    };
 };
 
 function displayCurrentWeather(data) {
