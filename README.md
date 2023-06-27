@@ -5,7 +5,7 @@ This website was designed so that users can find information about the current a
 
 The user's previously searched cities will be stored on the webpage, underneath the search bar, and be coded so that users to click on them to regenerate their search results. This was developed so that users can quickly access information about their commonly searched cities.
 
-This information is provided by fetching data from https://openweathermap.org/ using API requests. This can be done thanks to openweathermap.org generously allowing free API requests to be made to their site.
+This information is provided by fetching data from https://openweathermap.org using API requests. This can be done thanks to openweathermap.org generously allowing free API requests to be made to their site.
 
 ## Usage 
 To search up a city, the user can enter in the name of the city they're looking for, and press the "Search" button. 
